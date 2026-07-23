@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-epilogue);
+  --font-mono: var(--font-mono);
+  --color-background: #ffffff;
+  --color-foreground: #0B1020;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Goldfizh brand tokens
+   Primary accent: #1E3A8A (dark blue)
+   Near-black:     #0B1020 (cool, blue-tinted)
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --gf-purple-100:  #DCE3FA;
+  --gf-purple-300:  #5C7CBF;
+  --gf-purple-600:  #1E3A8A;   /* ★ primary brand dark blue */
+  --gf-purple-700:  #16295E;
+  --gf-purple-900:  #0B1020;   /* near-black with blue tint */
+
+  --gf-ink:         #0B1020;
+  --gf-ink-soft:    #22222D;
+  --gf-slate-700:   #555E6C;
+  --gf-slate-500:   #8C9BAF;
+  --gf-slate-400:   #BCC4CF;
+  --gf-slate-300:   #DCE0E6;
+  --gf-slate-200:   #F0F4F8;
+  --gf-white:       #FFFFFF;
+
+  --gf-shadow-sm:   0 1px 2px rgba(18, 16, 34, 0.06);
+  --gf-shadow-md:   0 8px 24px rgba(18, 16, 34, 0.08);
+  --gf-glow-purple: 0 20px 60px -10px rgba(30, 58, 138, 0.35);
+
+  --gf-radius-sm:   4px;
+  --gf-radius-md:   8px;
+  --gf-radius-lg:   16px;
+
+  --gf-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Base ── */
+html, body {
+  background: var(--gf-white);
+  color: var(--gf-ink);
+}
+
+body {
+  font-family: var(--font-epilogue), -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Eyebrow: 8×8 blue square before section labels ── */
+.gf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-epilogue), sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gf-slate-500);
+}
+.gf-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--gf-purple-600);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* ── KPI display value — Epilogue Light, tight tracking ── */
+.gf-display {
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+/* ── Blue period after section title ── */
+.gf-stop::after {
+  content: ".";
+  color: var(--gf-purple-600);
+}
